@@ -1,0 +1,143 @@
+.frame-702,
+.frame-702 * {
+  box-sizing: border-box;
+}
+.frame-702 {
+  background: #d7f1ff;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-700 {
+  background: #ffffff;
+  width: 1500px;
+  height: 85px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.group-37343 {
+  position: absolute;
+  inset: 0;
+}
+.wellness-360 {
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  right: 62.35%;
+  left: 9.58%;
+  width: 28.08%;
+  bottom: 37.02%;
+  top: 29.82%;
+  height: 33.16%;
+}
+.wellness-360-span {
+  color: #1699e1;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.wellness-360-span2 {
+  color: #44c482;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.group {
+  width: 3.07%;
+  height: 46.06%;
+  position: absolute;
+  right: 90.66%;
+  left: 6.27%;
+  bottom: 26.88%;
+  top: 27.06%;
+  overflow: visible;
+}
+.medical-reports {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-4365 {
+  background: #1e293b;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 444px;
+  height: 406px;
+  position: absolute;
+  left: 528px;
+  top: 176px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.login-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-4374 {
+  background: #FFFFFF;
+  border-radius: 15px;
+  width: 325px;
+  height: 44px;
+  position: absolute;
+  left: 587px;
+  top: 283px;
+}
+.rectangle-4375 {
+  background: #44c482;
+  border-radius: 20px;
+  width: 325px;
+  height: 44px;
+  position: absolute;
+  left: 587px;
+  top: 462px;
+}
+.rectangle-4376 {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 325px;
+  height: 44px;
+  position: absolute;
+  left: 587px;
+  top: 357px;
+}
+.username {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 587px;
+  top: 259px;
+}
+.login {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 724px;
+  top: 472px;
+}
+.password {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 587px;
+  top: 333px;
+}

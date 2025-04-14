@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/prescriptions.css">
+  <script src="authentication.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+  </style>
+  <title>Wellness360</title>
+</head>
+<body>
+  <div class="frame-704">
+    <div class="rectangle-4377"></div>
+    <div class="ellipse-440"></div>
+    <div class="ellipse-440"></div>
+    <div class="frame-700">
+      <div class="wellness-360">
+        <span>
+          <span class="wellness-360-span">WELLNESS</span>
+          <span class="wellness-360-span2">360</span>
+        </span>
+      </div>
+      <img class="group" src="images/logo-small.svg" />
+      <img class="user-cicrle-light" src="images/profile.svg" />
+      <div class="rectangle-4373">
+        <select class="language-dropdown">
+          <option value="en">English</option>
+          <option value="te">Telugu</option>
+          <option value="hi">Hindi</option>
+          <option value="ta">Tamil</option>
+        </select>
+      </div>
+    </div>
+    <div class="rectangle-4362"></div>
+    <img class="sign-in-squre" src="images/logout.svg" />
+    <img class="home" src="images/home-black.svg" />
+    <img class="file-dock" src="images/file-grey.svg" />
+    <img class="calendar-light" src="images/calendar-grey.svg" />
+    <img class="ai-essentials-icon-set" src="images/ai-grey.svg" />
+    <div class="main-menu">Main Menu</div>
+    <div class="dashboard" onclick="window.location.href='dashboard.html'">Dashboard</div>
+    <div class="prescriptions" onclick="window.location.href='prescriptions.html'">Prescriptions</div>
+    <div class="prescriptions2" onclick="window.location.href='prescriptions.html'">Prescriptions</div>
+    <div class="upload-report" onclick="window.location.href='report.html'">Upload Report</div>
+    <div class="appointments" onclick="window.location.href='appointment.html'">Reminders</div>
+    <div class="ai-assistant" onclick="window.location.href='chatbot.html'">
+      AI Assistant
+      <br />
+    </div>
+    <div class="emergency" onclick="window.location.href='emergency.html'">Emergency</div>
+    <div class="logout" onclick="window.location.href='index.html'">Logout</div>
+    <img class="edit-paperclip-attechment-tilt" src="images/paper-grey.svg" />
+    <img class="package-car" src="images/emergency-black.svg" />
+    
+    
+    <div class="rectangle-4378"></div>        
+    <img class="edit-paperclip-attechment-tilt2" src="images/paper-blue.svg" />
+    <div class="rectangle-4379"></div>
+    <div class="upload-your-prescription">Upload Your Prescription</div>
+    
+    <div class="upload-a-pdf-for-better-results">
+      Upload a PDF for better results
+    </div>
+    <div class="rectangle-green"></div>
+    <div class="rectangle-4389">
+      <ul id="fileList"></ul>
+    </div>
+
+
+    <div class="your-prescriptions">Your Prescriptions</div>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <div class="rectangle-4392">
+        <input class="rectangle-4392-btn" type="file" name="pdf" accept=".pdf" id="pdf-upload" />
+        <br>
+        <label for="pdf-upload">Upload PDF</label>
+      </div>
+    
+      <div class="rectangle-4384">      
+        <button class="rectangle-4384-btn" type="submit">
+          <span class="upload-file">Upload File</span>
+        </button>
+      </div>  
+    </form>
+
+
+    <div class="rectangle-4393" id="file-name-box"></div>
+  </div>
+  <script src="translation.js"></script>
+  <script src = "files.js"></script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+.emergency-container {
+    background-color: #f8d7da;
+    padding: 20px;
+    z-index: 10;
+    border-radius: 10px;
+    margin: 20px;
+    width: 700px;
+    position: absolute; /* Add absolute positioning */
+    left: 400px; /* Position it to the right of the sidebar */
+    top: 150px; /* Position it below the header */
+}
+
+.find-hospitals-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #44C482; /* Matches the emergency-form button */
+    color: 000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 500px; /* Makes the button full-width for consistency */
+    text-align: center;
+}
+.find-doctor {
+    color: #d7f1ff;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    left: 446px;
+    top: 115px;
+    z-index: 1;
+  }
+  
+.find-hospitals-btn:hover {
+    background-color: #44C482; /* Matches the hover state of emergency-form button */
+}
+.emergency-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #721c24;
+}
+
+.emergency-info {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #721c24;
+}
+
+.emergency-form {
+    margin-top: 15px;
+}
+
+.emergency-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.emergency-form input, .emergency-form textarea {
+    width: 500px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #721c24;
+    border-radius: 5px;
+}
+
+.emergency-form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #c82333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.emergency-form button:hover {
+    background-color: #a71d31; /* Fixed invalid hex code #a71 to #a71d31 */
+}
+
+/* New styles for emergency-details */
+.emergency-details {
+    margin-bottom: 20px;
+}
+
+.emergency-contact-list {
+    list-style-type: none;
+    width:600px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.emergency-contact-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #721c24;
+    border-radius: 5px;
+    color: #721c24;
+}
+
+.emergency-contact-list li span {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.emergency-contact-list li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #c82333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.emergency-contact-list li button:hover {
+    background-color: #a71d31;
+}
+
+.frame-706 {
+    background: #ffffff;
+    height: auto; /* Changed from 700px to auto to prevent clipping */
+    min-height: 700px; /* Added to ensure a minimum height */
+    position: relative;
+    overflow: visible; /* Changed from hidden to visible to allow content to show */
+}
+
+/* Unrelated CSS remains unchanged */
+.language-dropdown {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 16px;
+    background: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+.frame-700 {
+    background: #ffffff;
+    width: 1500px;
+    height: 85px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+.group-37343 {
+    position: absolute;
+    inset: 0;
+}
+
+.wellness-360 {
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    right: 62.35%;
+    left: 9.58%;
+    width: 28.08%;
+    bottom: 37.02%;
+    top: 29.82%;
+    height: 33.16%;
+}
+
+.wellness-360-span {
+    color: #1699e1;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.wellness-360-span2 {
+    color: #44c482;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.group {
+    width: 3.07%;
+    height: 46.06%;
+    position: absolute;
+    right: 90.66%;
+    left: 6.27%;
+    bottom: 26.88%;
+    top: 27.06%;
+    overflow: visible;
+}
+
+.user-cicrle-light {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 1346px;
+    top: 20px;
+    overflow: visible;
+}
+
+.rectangle-4373 {
+    background: #ffffff;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    width: 129px;
+    height: 40px;
+    position: absolute;
+    left: 1173px;
+    top: 25px;
+}
+
+.expand-down-light {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 1269px;
+    top: 33px;
+    overflow: visible;
+}
+.search-light {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 368px;
+    top: 111px;
+    overflow: visible;
+    z-index: 1;
+}
+.rectangle-4362 {
+    background: #1e293b;
+    width: 337px;
+    height: 820px;
+    position: absolute;
+    left: 0px;
+    top: 85px;
+}
+
+.sign-in-squre {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 24px;
+    top: 494px;
+    overflow: visible;
+}
+
+.home {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 24px;
+    top: 180px;
+    overflow: visible;
+}
+
+.file-dock {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 21px;
+    top: 280px;
+    overflow: visible;
+}
+
+.calendar-light {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 24px;
+    top: 333px;
+    overflow: visible;
+}
+
+.ai-essentials-icon-set {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 24px;
+    top: 391px;
+    overflow: visible;
+}
+
+.main-menu {
+    color: #8f8f8f;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 30px;
+    top: 138px;
+}
+
+.dashboard {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 73px;
+    top: 187px;
+}
+
+.prescriptions {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 73px;
+    top: 235px;
+}
+
+.upload-report {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 70px;
+    top: 286px;
+}
+
+.appointments {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 73px;
+    top: 341px;
+}
+
+.ai-assistant {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 73px;
+    top: 398px;
+    width: 112px;
+    height: 26px;
+}
+
+.emergency {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 73px;
+    top: 447px;
+    width: 112px;
+    height: 26px;
+}
+
+.logout {
+    color: #cecece;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 73px;
+    top: 500px;
+    width: 112px;
+    height: 26px;
+}
+
+.edit-paperclip-attechment-tilt {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 21px;
+    top: 228px;
+    overflow: visible;
+}
+
+.package-car {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 24px;
+    top: 441px;
+    overflow: visible;
+}
+
+.rectangle-4379 {
+    background: #1699e1;
+    border-radius: 30px;
+    opacity: 0.2;
+    width: 189px;
+    height: 50px;
+    position: absolute;
+    left: 12px;
+    top: 434px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-4377 {
+    background: #1699e1;
+    border-radius: 30px;
+    width: 342px;
+    height: 52.1px;
+    position: absolute;
+    left: 421px;
+    top: 105px;
+}
+
+.group-37345 {
+    position: absolute;
+    inset: 0;
+}
+
+.ellipse-440 {
+    background: #d7f1ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 52.1px;
+    position: absolute;
+    left: 362px;
+    top: 105px;
+}
+
+.group-37354 {
+    position: absolute;
+    inset: 0;
+}
+
+.upload-your-reports {
+    color: #d7f1ff;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    left: 447px;
+    top: 112.29px;
+    width: 294px;
+    height: 37.52px;
+}
+
+.rectangle-4390 {
+    background: #d7f1ff;
+    border-radius: 20px;
+    width: 284px;
+    height: 66.69px;
+    position: absolute;
+    left: 438px;
+    top: 376.98px;
+}
+
+.rectangle-4388 {
+    background: #b5f7d5;
+    border-radius: 20px;
+    width: 416px;
+    height: 425.17px;
+    position: absolute;
+    left: 943px;
+    top: 199.83px;
+}
+
+.rectangle-4389 {
+    background: #b5f7d5;
+    border-radius: 20px;
+    width: 416px;
+    height: 341.8px;
+    position: absolute;
+    left: 943px;
+    top: 283.2px;
+}
+
+.file-dock2 {
+    width: 40px;
+    height: 41.68px;
+    position: absolute;
+    left: 368px;
+    top: 110.21px;
+    overflow: visible;
+}
+
+
+
+.rectangle-4378 {
+    background: #d7f1ff;
+    border-radius: 20px;
+    width: 416px;
+    height: 425.17px;
+    position: absolute;
+    left: 421px;
+    top: 199.83px;
+}
+
+.rectangle-4384 {
+    background: #1699e1;
+    border-radius: 30px;
+    width: 199px;
+    height: 52.1px;
+    position: absolute;
+    left: 524px;
+    top: 489.53px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    /* Ensure full visibility */
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/emergency.css"> 
+  <script src="authentication.js"></script>
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   }
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+  </style>
+  <title>Wellness360</title>
+</head>
+<body>
+  <div class="frame-706">
+    <div class="frame-700">
+      <div class="wellness-360">
+        <span>
+          <span class="wellness-360-span">WELLNESS</span>
+          <span class="wellness-360-span2">360</span>
+        </span>
+      </div>
+      <img class="group" src="images/logo-small.svg" />
+      <img class="user-cicrle-light" src="images/profile.svg" />
+      <div class="rectangle-4373">
+        <select class="language-dropdown">
+          <option value="en">English</option>
+          <option value="te">Telugu</option>
+          <option value="hi">Hindi</option>
+          <option value="ta">Tamil</option>
+        </select>
+      </div>
+    </div>
+    <div class="rectangle-4362"></div>
+    <img class="sign-in-squre" src="images/logout.svg" />
+    <img class="home" src="images/home-black.svg" />
+    <img class="file-dock" src="images/file-grey.svg" />
+    <img class="calendar-light" src="images/calendar-grey.svg" />
+    <img class="ai-essentials-icon-set" src="images/ai-grey.svg" />
+    <div class="main-menu">Main Menu</div>
+    <div class="dashboard" onclick="window.location.href='dashboard.html'">Dashboard</div>
+    <div class="find-doctor" >Emergency Contacts</div>
+    <div class="prescriptions" onclick="window.location.href='prescriptions.html'">Prescriptions</div>
+    <div class="upload-report" onclick="window.location.href='report.html'">Upload Report</div>
+    <div class="appointments" onclick="window.location.href='appointment.html'">Reminders</div>
+    <div class="ai-assistant" onclick="window.location.href='chatbot.html'">AI Assistant</div>
+    <div class="emergency" onclick="window.location.href='emergency.html'">Emergency</div>
+    <div class="logout" onclick="window.location.href='index.html'">Logout</div>
+    <img class="edit-paperclip-attechment-tilt" src="images/paper-grey.svg"/>
+    <img class="package-car" src="images/emergency-black.svg" />
+    <img class="search-light" src="images/find-blue-big.svg" />
+    <div class="rectangle-4379" ></div>
+    <div class="rectangle-4377"></div>
+    <div class="ellipse-440"></div>
+    <div class="ellipse-440"></div>
+    
+    <!-- Emergency Details Section -->
+    <div class="emergency-container">
+      <!-- New Container for Existing Emergency Contacts -->
+      <div class="emergency-details">
+        <h2 class="emergency-title">Existing Emergency Contacts</h2>
+        <ul class="emergency-contact-list"></ul> <!-- List to display contacts -->
+      </div>
+
+      <!-- Updated Form with ID -->
+      <h2 class="emergency-title">Emergency Contacts</h2>
+      <p class="emergency-info">Provide your emergency contact details below.</p>
+      <form class="emergency-form" id="emergencyForm">
+        <label for="contact-name">Contact Name:</label>
+        <input type="text" id="contact-name" name="contact-name" required>
+        
+        <label for="contact-number">Phone Number:</label>
+        <input type="tel" id="contact-number" name="contact-number" required>
+        
+        <label for="relationship">Relationship:</label>
+        <input type="text" id="relationship" name="relationship" required>
+        <br/>
+        <button type="submit">Save Emergency Contact</button>
+      </form>
+      <br/><br/>
+      <h2 class="emergency-title">Nearest Hospitals</h2>
+      <p class="emergency-info">Find the nearest hospitals for emergency situations.</p>
+      <button class="find-hospitals-btn" onclick="window.location.href='map.html'">Find Hospitals</button>
+    </div>
+  </div>
+
+  <script>
+    // Initial emergency contacts (simulating stored data)
+    let emergencyContacts = [
+      { name: "John Doe", phone: "123-456-7890", relationship: "Family" },
+      { name: "Jane Smith", phone: "987-654-3210", relationship: "Friend" },
+    ];
+
+    // Function to render emergency contacts
+    function renderEmergencyContacts() {
+      const contactList = document.querySelector(".emergency-contact-list");
+      contactList.innerHTML = ""; // Clear existing list
+
+      emergencyContacts.forEach((contact, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>Name:</span> ${contact.name}
+          <span>Phone:</span> ${contact.phone}
+          <span>Relationship:</span> ${contact.relationship}
+          <button onclick="deleteContact(${index})">Delete</button>
+        `;
+        contactList.appendChild(li);
+      });
+    }
+
+    // Function to delete a contact
+    function deleteContact(index) {
+      emergencyContacts.splice(index, 1);
+      renderEmergencyContacts();
+    }
+
+    // Handle form submission
+    document.getElementById("emergencyForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("contact-name").value;
+      const phone = document.getElementById("contact-number").value;
+      const relationship = document.getElementById("relationship").value;
+
+      if (name && phone && relationship) {
+        emergencyContacts.push({ name, phone, relationship });
+        renderEmergencyContacts();
+
+        // Clear form
+        this.reset();
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+
+    // Initial render
+    renderEmergencyContacts();
+  </script>
+  <script src="translation.js"></script>
+  
+</body>
+</html>

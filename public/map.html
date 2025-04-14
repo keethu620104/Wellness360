@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/map.css">
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   </style>
+  <title>Wellness360</title>
+</head>
+<body>
+  <div class="frame-703">
+    <div class="rectangle-4377"></div>
+    <div class="ellipse-440"></div>
+    <div class="ellipse-440"></div>
+    <div class="frame-700">
+      <div class="wellness-360">
+        <span>
+          <span class="wellness-360-span">WELLNESS</span>
+          <span class="wellness-360-span2">360</span>
+        </span>
+      </div>
+      <img class="group" src="images/logo-small.svg" />
+      <img class="user-cicrle-light" src="images/profile.svg" />
+      <div class="rectangle-4373">
+        <select class="language-dropdown">
+          <option value="en">English</option>
+          <option value="te">Telugu</option>
+          <option value="hi">Hindi</option>
+          <option value="ta">Tamil</option>
+        </select>
+      </div>
+      <!-- <img class="expand-down-light" src="images/expand-down-light0.svg" />
+      <div class="english">English</div> -->
+    </div>
+    <div class="rectangle-4362"></div>
+    <img class="sign-in-squre" src="images/logout.svg" />
+    <img class="home" src="images/home-black.svg" />
+    <img class="file-dock" src="images/file-grey.svg" />
+    <img class="calendar-light" src="images/calendar-grey.svg" />
+    <img class="ai-essentials-icon-set" src="images/ai-grey.svg" />
+    <div class="main-menu">Main Menu</div>
+    <div class="dashboard" onclick="window.location.href='dashboard.html'" >Dashboard</div>
+    <div class="find-doctor" >Find Near Me</div>
+    <div class="prescriptions" onclick="window.location.href='prescriptions.html'">Prescriptions</div>
+    <div class="upload-report" onclick="window.location.href='report.html'">Upload Report</div>
+    <div class="appointments" onclick="window.location.href='appointment.html'" >Reminder</div>
+    <div class="ai-assistant" onclick="window.location.href='chatbot.html'" >AI Assistant</div>
+    <div class="emergency" onclick="window.location.href='emergency.html'">Emergency</div>
+    <div class="logout" onclick="window.location.href='index.html'">Logout</div>
+    <img class="edit-paperclip-attechment-tilt" src="images/paper-grey.svg" />
+    <img class="package-car" src="images/emergency-black.svg" />
+    <img class="search-light" src="images/find-blue-big.svg" />
+    <div class="rectangle-4378">
+      <div class="container">
+        <div class="search-box">
+            <select id="concern-dropdown" class = "concern-dropdown">
+              <option value="" class="select-concern">Select Concern</option>
+              <option value="pregnancy" class="pregnancy">Pregnancy</option>
+              <option value="cardiology" class="cardiology">Cardiology</option>
+              <option value="orthopedics" class="orthopedics">Orthopedics</option>
+              <option value="pediatrics" class="pediatrics">Pediatrics</option>
+              <option value="neurology" class="neurology">Neurology</option>
+              <option value="covid-19" class="covid-19">COVID-19</option>              
+                <!-- Add more concerns as needed -->
+            </select>
+            <button id="search-hospitals-btn" class = "search-hospitals-btn">Find Hospitals Near Me</button>
+            <button id="search-diagnostics-btn" class = "search-diagnostics-btn">Find Diagnostic Centers Near Me</button>
+        </div>
+
+        <div class="hospital-list" id="hospital-list">
+            <!-- Results will be dynamically injected here -->
+        </div>
+
+        <button class="submit-btn" id="submit-btn" style="display: none;">Submit</button>
+
+        <div id="map"></div>
+    </div>
+    </div>
+  </div>
+</body>
+<script src = "translation.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNVZV4VOxBd7qCuPkBNF0VGCzC3wG0_Us&libraries=places"  defer></script>
+    
+<!-- Main JavaScript -->
+<script>
+    let map, service, infoWindow;
+    let selectedHospital = null;
+
+    function initMap() {
+        infoWindow = new google.maps.InfoWindow();
+        // Initialize the map with a default center
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -34.397, lng: 150.644 }, // Default center (will be updated)
+            zoom: 15,
+        });
+
+        // Event listener for finding hospitals
+        document.getElementById('search-hospitals-btn').addEventListener('click', () => {
+            findNearbyPlaces('hospital');
+        });
+
+        // Event listener for finding diagnostic centers
+        document.getElementById('search-diagnostics-btn').addEventListener('click', () => {
+            findNearbyPlaces('health');
+        });
+
+        // Event listener for the submit button
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            if (selectedHospital) {
+                const concern = document.getElementById('concern-dropdown').value;
+                const timestamp = new Date().toLocaleString();
+                console.log(`Hospital: ${selectedHospital}, Concern: ${concern}, Date & Time: ${timestamp}`);
+                // Navigate to the selected hospital link
+                window.location.href = selectedHospital.link; // Navigate to the selected hospital's link
+            } else {
+                alert("Please select a hospital.");
+            }
+        });
+    }
+
+    // Function to find nearby places based on type
+    function findNearbyPlaces(placeType) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+
+                    // Center map on user's location
+                    map.setCenter(userLocation);
+
+                    // Add marker for user's location
+                    new google.maps.Marker({
+                        position: userLocation,
+                        map: map,
+                        title: "Your Location",
+                    });
+
+                    // Get the selected concern from the dropdown
+                    const concern = document.getElementById('concern-dropdown').value;
+                    let queryType = placeType;
+
+                    // If a concern is selected, add it to the query
+                    if (concern) {
+                        queryType += ` ${concern}`;
+                    }
+
+                    // Perform a search for the selected place type and concern
+                    searchNearbyPlaces(userLocation, queryType);
+                },
+                () => {
+                    handleLocationError(true, map.getCenter());
+                }
+            );
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, map.getCenter());
+        }
+    }
+
+    // Function to handle geolocation errors
+    function handleLocationError(browserHasGeolocation, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(
+            browserHasGeolocation
+                ? "Error: The Geolocation service failed."
+                : "Error: Your browser doesn't support geolocation."
+        );
+        infoWindow.open(map);
+    }
+
+    // Function to search nearby places (hospitals or diagnostic centers)
+    function searchNearbyPlaces(location, query) {
+        const request = {
+            location: location,
+            radius: '5000', // 5 km radius
+            query: query, // Query includes place type and selected concern
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, (results, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                displayPlaces(results);
+            } else {
+                console.error('Error finding places:', status);
+            }
+        });
+    }
+
+    // Function to display nearby places on the map and in the list
+    function displayPlaces(places) {
+      const hospitalList = document.getElementById("hospital-list");
+      hospitalList.innerHTML = ""; // Clear the list
+      selectedHospital = null; // Reset selected hospital
+      document.getElementById('submit-btn').style.display = 'none'; // Hide the submit button
+  
+      // Limit the number of places displayed to 7 or 8
+      const maxResults = 12;
+      const limitedPlaces = places.slice(0, maxResults);
+  
+      limitedPlaces.forEach((place) => {
+          // Create a marker for each place
+          const marker = new google.maps.Marker({
+              position: place.geometry.location,
+              map: map,
+              title: place.name,
+          });
+  
+          // Event listener to open an info window on marker click
+          google.maps.event.addListener(marker, 'click', () => {
+              infoWindow.setContent(
+                  `<div><strong>${place.name}</strong><br>${place.formatted_address}</div>`
+              );
+              infoWindow.open(map, marker);
+          });
+  
+          // Create a checkbox for each place
+          const placeCheckbox = document.createElement("div");
+          placeCheckbox.classList.add("hospital");
+          placeCheckbox.innerHTML = `
+              <input type="checkbox" id="${place.place_id}" value="${place.name}" onclick="selectHospital('${place.name}', '${place.website ? place.website : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ' ' + place.formatted_address)}` }')">
+              <label for="${place.place_id}">${place.name}</label>
+          `;
+          hospitalList.appendChild(placeCheckbox);
+      });
+  }
+  
+
+    // Function to select a hospital
+    function selectHospital(name, link) {
+        selectedHospital = { name: name, link: link }; // Store selected hospital
+        document.getElementById('submit-btn').style.display = 'block'; // Show the submit button
+    }
+
+    // Load the map and initialize everything
+    window.onload = initMap;
+</script> 
+</html>

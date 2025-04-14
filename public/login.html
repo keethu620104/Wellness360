@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles/login.css">
+  
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   </style>
+  <title>Wellness360</title>
+</head>
+<body>
+  <div class="frame-702">
+    <div class="frame-700">
+      <div class="wellness-360">
+        <span>
+          <span class="wellness-360-span">WELLNESS</span>
+          <span class="wellness-360-span2">360</span>
+        </span>
+      </div>
+      <img class="group" src="images/logo-small.svg" />
+    </div>
+    <div class="rectangle-4365"> <h2 class="login-text">LOGIN</h2></div>
+    <input type="text" class="rectangle-4374" id="username" placeholder="Username" required>
+    <div class="rectangle-4375"></div>
+    <input type="password" class="rectangle-4376" id="password" placeholder="Password" required>
+      
+    <button class="login" onclick="login()">LOGIN</button>
+    
+  </div>
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const errorMessage = document.getElementById("error-message");
+      
+      // Send login request to server
+      fetch('/login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              window.location.href = "dashboard.html";
+          } else {
+              errorMessage.textContent = data.error || "Invalid credentials. Try again.";
+          }
+      })
+      .catch(error => {
+          console.error('Login error:', error);
+          errorMessage.textContent = "An error occurred. Please try again.";
+      });
+  }
+  
+  // Check if we were redirected here from a protected page
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('unauthorized')) {
+      document.getElementById("error-message").textContent = "Please log in to access that page.";
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+.frame-699,
+.frame-699 * {
+  box-sizing: border-box;
+}
+.frame-699 {
+  background: #ffffff;
+  height: 1770px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-700 {
+  background: #ffffff;
+  width: 1500px;
+  height: 85px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.group-37343 {
+  position: absolute;
+  inset: 0;
+}
+.header {
+  width: 513.98px;
+  height: 17px;
+  position: static;
+}
+.features {
+  color: #484f58;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 35.73%;
+  left: 59.47%;
+  width: 4.8%;
+  top: 37px;
+}
+.login {
+  color: #484f58;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 11.6%;
+  left: 83.93%;
+  width: 4.47%;
+  top: 37px;
+}
+.about {
+  color: #484f58;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 22.72%;
+  left: 72.81%;
+  width: 4.47%;
+  top: 37px;
+}
+.services {
+  color: #484f58;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 26.4%;
+  left: 65.88%;
+  width: 7.72%;
+  top: 37px;
+}
+.contact {
+  color: #484f58;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 17.2%;
+  left: 78.33%;
+  width: 4.47%;
+  top: 37px;
+}
+.signup {
+  color: #484f58;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 6.27%;
+  left: 89.27%;
+  width: 4.47%;
+  top: 37px;
+}
+.wellness-360 {
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  right: 62.35%;
+  left: 9.58%;
+  width: 28.08%;
+  bottom: 37.02%;
+  top: 29.82%;
+  height: 33.16%;
+}
+.wellness-360-span {
+  color: #1699e1;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.wellness-360-span2 {
+  color: #44c482;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.group {
+  width: 3.07%;
+  height: 46.06%;
+  position: absolute;
+  right: 90.66%;
+  left: 6.27%;
+  bottom: 26.88%;
+  top: 27.06%;
+  overflow: visible;
+}
+.frame-7002 {
+  background: #d7f1ff;
+  width: 1500px;
+  height: 614px;
+  position: absolute;
+  left: 0px;
+  top: 85px;
+  overflow: hidden;
+}
+.group2 {
+  width: 19.33%;
+  height: 40.72%;
+  position: absolute;
+  right: 15%;
+  left: 65.67%;
+  bottom: 44.63%;
+  top: 14.66%;
+  overflow: visible;
+}
+.vector {
+  width: 27.33%;
+  height: 6.29%;
+  position: absolute;
+  right: 9.67%;
+  left: 63%;
+  bottom: 31.01%;
+  top: 62.7%;
+  overflow: visible;
+}
+.wellness-3602 {
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  position: absolute;
+  right: -0.73%;
+  left: 65.67%;
+  width: 35.07%;
+  bottom: 18.08%;
+  top: 73.13%;
+  height: 8.79%;
+}
+.wellness-3602-span {
+  color: #36afda;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+}
+.wellness-3602-span2 {
+  color: #44c482;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+}
+.your-all-in-one-gateway-to-smarter-simpler-healthcare {
+  color: #909090;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  right: 4.67%;
+  left: 58%;
+  width: 37.33%;
+  bottom: 10.23%;
+  top: 85.99%;
+  height: 3.77%;
+}
+.frame-643 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 134px;
+  top: 200px; 
+}
+.frame-642 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  /* top: 200px */
+}
+.frame-641 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 117px;
+  position: relative;
+  bottom:100px
+}
+.wellness-3603 {
+  color: #000000;
+  text-align: left;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  position: relative;
+  width: 486px;
+  height: 89px;
+  top: 70px;
+}
+.smart-simple-seamless-healthcare {
+  color: #676767;
+  text-align: left;
+  font-family: "Lato-Black", sans-serif;
+  font-size: 23px;
+  font-weight: 900;
+  position: relative;
+  width: 486px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  top: 70px;
+}
+.scan-prescriptions-chat-with-ai-and-store-medical-records-securely-get-medication-reminders-find-nearby-hospitals-and-schedule-appointments-personalized-diet-plans-and-multilingual-support-for-smarter-healthcare {
+  margin: -225px 0 0 0;
+  color: var(--light-text-color, rgba(23, 25, 51, 0.8));
+  text-align: left;
+  font-family: "Lato-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 161%;
+  font-weight: 400;
+  position: relative;
+  width: 484px;
+  height: 329px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  top:120px;
+}
+.frame-8 {
+  margin: -225px 0 0 0;
+  background: #4caf50;
+  border-radius: 40px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px;
+  padding: 9px 68px 9px 68px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 486px;
+  height: 64px;
+  position: relative;
+  top:279px
+}
+.take-a-quick-tour {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--h5-bold-font-family, "Lato-Bold", sans-serif);
+  font-size: var(--h5-bold-font-size, 20px);
+  line-height: var(--h5-bold-line-height, 24px);
+  font-weight: var(--h5-bold-font-weight, 700);
+  position: relative;
+  width: 304px;
+}
+.our-features {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  left: 658px;
+  top: 756px;
+}
+.comprehensive-healthcare-solutions-at-your-fingertips {
+  color: #676767;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  position: absolute;
+  left: 417px;
+  top: 840px;
+}
+.medical-reports {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-4365 {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 387.52px;
+  height: 208.4px;
+  position: absolute;
+  left: 106px;
+  top: 920.16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.extract-and-analyze-your-medicines-using-our-advanced-ocr-technology {
+  color: #484f58;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 146.39px;
+  top: 1052.14px;
+  width: 323.11px;
+  height: 34.73px;
+}
+.group-37345 {
+  width: 32.75px;
+  height: 34.73px;
+  position: static;
+}
+.ellipse-440 {
+  background: #d7f1ff;
+  border-radius: 50%;
+  width: 32.75px;
+  height: 34.73px;
+  position: absolute;
+  left: 143.11px;
+  top: 959.52px;
+}
+.prescriptions {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 146.39px;
+  top: 1012.78px;
+  width: 101.52px;
+  height: 20.84px;
+}
+.edit-paperclip-attechment-tilt {
+  width: 26.2px;
+  height: 27.79px;
+  position: absolute;
+  left: 146.39px;
+  top: 963px;
+  overflow: visible;
+}
+.group-37350 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-43652 {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 387.52px;
+  height: 208.4px;
+  position: absolute;
+  left: 555.74px;
+  top: 919px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.get-instant-medical-guidance-and-mental-health-support-from-our-ai-chatbot {
+  color: #484f58;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 596.13px;
+  top: 1050.99px;
+  width: 313.29px;
+  height: 34.73px;
+}
+.ellipse-4402 {
+  background: #d7f1ff;
+  border-radius: 50%;
+  width: 32.75px;
+  height: 34.73px;
+  position: absolute;
+  left: 592.86px;
+  top: 958.36px;
+}
+.ai-essentials-icon-set {
+  width: 26.2px;
+  height: 27.79px;
+  position: absolute;
+  left: 596.13px;
+  top: 961.84px;
+  overflow: visible;
+}
+.ai-assistance {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 596.13px;
+  top: 1011.62px;
+  width: 104.79px;
+  height: 20.84px;
+}
+.rectangle-43653 {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 387.52px;
+  height: 208.4px;
+  position: absolute;
+  left: 1005.48px;
+  top: 924.79px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.securely-upload-store-and-manage-all-your-medical-reports-in-one-place {
+  color: #484f58;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 1045.87px;
+  top: 1056.77px;
+  width: 253.25px;
+  height: 34.73px;
+}
+.ellipse-4403 {
+  background: #d7f1ff;
+  border-radius: 50%;
+  width: 32.75px;
+  height: 34.73px;
+  position: absolute;
+  left: 1042.6px;
+  top: 964.15px;
+}
+.file-dock {
+  width: 26.2px;
+  height: 27.79px;
+  position: absolute;
+  left: 1045.87px;
+  top: 967.63px;
+  overflow: visible;
+}
+.medical-reports2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 1045.87px;
+  top: 1017.41px;
+  width: 126.63px;
+  height: 20.84px;
+}
+.group-37349 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-43654 {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 387.52px;
+  height: 208.4px;
+  position: absolute;
+  left: 107.04px;
+  top: 1210px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.experience-our-platform-in-your-preferred-language-for-better-accessibility {
+  color: #484f58;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 147.43px;
+  top: 1341.99px;
+  width: 295.82px;
+  height: 34.73px;
+}
+.ellipse-4404 {
+  background: #d7f1ff;
+  border-radius: 50%;
+  width: 32.75px;
+  height: 34.73px;
+  position: absolute;
+  left: 144.16px;
+  top: 1249.36px;
+}
+.multi-language-support {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 147.43px;
+  top: 1302.62px;
+  width: 185.57px;
+  height: 20.84px;
+}
+.group-373492 {
+  width: 21.83px;
+  height: 23.16px;
+  position: absolute;
+  left: 149.62px;
+  top: 1255.15px;
+  overflow: visible;
+}
+.group-37346 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-43655 {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 387.52px;
+  height: 208.4px;
+  position: absolute;
+  left: 555.74px;
+  top: 1209.6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.find-and-book-appointments-with-healthcare-professionals-effortlessly {
+  color: #484f58;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 596.13px;
+  top: 1341.59px;
+  width: 301.28px;
+  height: 34.73px;
+}
+.ellipse-4405 {
+  background: #d7f1ff;
+  border-radius: 50%;
+  width: 32.75px;
+  height: 34.73px;
+  position: absolute;
+  left: 592.86px;
+  top: 1248.97px;
+}
+.appointments {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 596.13px;
+  top: 1302.22px;
+  width: 108.07px;
+  height: 20.84px;
+}
+.rectangle-43656 {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 387.52px;
+  height: 208.4px;
+  position: absolute;
+  left: 1005.48px;
+  top: 1209.6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.quick-access-to-emergency-services-with-our-alert-system {
+  color: #484f58;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 1045.87px;
+  top: 1341.59px;
+  width: 299.1px;
+  height: 34.73px;
+}
+.ellipse-4406 {
+  background: #d7f1ff;
+  border-radius: 50%;
+  width: 32.75px;
+  height: 34.73px;
+  position: absolute;
+  left: 1042.6px;
+  top: 1248.97px;
+}
+.emergency {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 1045.87px;
+  top: 1302.22px;
+  width: 87.33px;
+  height: 20.84px;
+}
+.calendar-light {
+  width: 25.03px;
+  height: 27px;
+  position: absolute;
+  left: 596.19px;
+  top: 1252px;
+  overflow: visible;
+}
+.package-car {
+  width: 26.07px;
+  height: 28px;
+  position: absolute;
+  left: 1045.7px;
+  top: 1251px;
+  overflow: visible;
+}
+.rectangle-4362 {
+  background: #1e293b;
+  width: 1500px;
+  height: 256px;
+  position: absolute;
+  left: 0px;
+  top: 1509px;
+}
+.wellness-3604 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 123px;
+  top: 1574px;
+}
+.your-comprehensive-healthcare-platform-for-managing-all-your-medical-needs {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  left: 61px;
+  top: 1637px;
+  width: 240px;
+}
+.logo {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 245px;
+  top: 1694px;
+}
+.footer-content-and-links {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 456px;
+  top: 1613px;
+}
