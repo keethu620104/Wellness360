@@ -37,13 +37,9 @@ app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "login.html"));
 });
 
-app.get("/map", (req, res) => {
-  // Render maps.html and pass the API key to the template
-  res.render('map', {
-      mapApiKey: process.env.MAP_API_KEY // Pass the API key to maps.html
-  });
+app.get('/maps-api-key', (req, res) => {
+  res.json({ key: process.env.MAP_API_KEY });
 });
-
 
 app.post("/login", (req, res) => {
     const { username, password } = req.body;
