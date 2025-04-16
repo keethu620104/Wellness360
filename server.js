@@ -35,9 +35,14 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
    
         res.sendFile(path.join(__dirname, "login.html"));
-    
 });
 
+app.get("/map", (req, res) => {
+  // Render maps.html and pass the API key to the template
+  res.render('map', {
+      mapApiKey: process.env.MAP_API_KEY // Pass the API key to maps.html
+  });
+});
 
 
 app.post("/login", (req, res) => {
@@ -108,6 +113,7 @@ app.listen(PORT, () => {
 
 
 import { default as File } from './models/file.model.js';
+import { default as Report } from './models/report.model.js';
 
 // MongoDB Atlas connection (if different from local)
 mongoose.connect(process.env.MONGO_ATLAS_URI_TEST, {
@@ -118,6 +124,8 @@ mongoose.connect(process.env.MONGO_ATLAS_URI_TEST, {
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+
+// -------------for files------------------
 
 // Route for uploading a PDF file
 app.post('/upload', upload.single('pdf'), async (req, res) => {
@@ -170,6 +178,69 @@ app.get('/files/:id', async (req, res) => {
 app.delete('/files/:id', async (req, res) => {
   try {
     const result = await File.findByIdAndDelete(req.params.id);
+
+    if (!result) {
+      return res.status(404).send('File not found');
+    }
+
+    res.send('File deleted successfully');
+  } catch (error) {
+    console.error('Error deleting file:', error);
+    res.status(500).send('Error deleting the file');
+  }
+});
+
+// --------------------------------for report------------------------------
+app.post('/upload-report', upload.single('pdf'), async (req, res) => {
+  try {
+    const { originalname, buffer, mimetype } = req.file;
+
+    const file = new Report({
+      name: originalname,
+      data: buffer,
+      contentType: mimetype,
+    });
+
+    await file.save();
+    res.status(201).send('File uploaded successfully.');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error uploading the file.');
+  }
+});
+
+
+// Route to display a list of uploaded files
+app.get('/reports', async (req, res) => {
+  try {
+    const files = await Report.find();
+    res.send(files);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving files from the database.');
+  }
+});
+
+// Route to display an individual file based on its ID
+app.get('/reports/:id', async (req, res) => {
+  try {
+    const file = await Report.findById(req.params.id);
+
+    if (!file) {
+      return res.status(404).send('File not found');
+    }
+
+    // Send the file data as a response
+    res.contentType(file.contentType);
+    res.send(file.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving the file from the database.');
+  }
+});
+app.delete('/reports/:id', async (req, res) => {
+  try {
+    const result = await Report.findByIdAndDelete(req.params.id);
 
     if (!result) {
       return res.status(404).send('File not found');
