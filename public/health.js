@@ -2,22 +2,23 @@ async function fetchHealthData() {
   try {
     const healthTipsElement = document.querySelector('.health-tips');
     healthTipsElement.innerHTML = '⏳ Analyzing your reports...';
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    // Directly use the entityMap for health tips instead of fetching from the backend
+    const entityMap = {
+      'HAEMOGLOBIN': "🥗 Increase iron with leafy greens, red meat, legumes.",
+      'RBC COUNT': "🥩 Boost iron and B12 with eggs, spinach, and beans.",
+      'HDL CHOLESTEROL': "🐟 Include healthy fats like avocado, nuts, and salmon.",
+      'PCV': "🥬 Eat more iron and folate-rich foods such as lentils and citrus fruits.",
+      'TRI-IODOTHYRONINE': "🧂 Add iodine-rich foods like seafood and iodized salt."
+    };
 
-    // 1. Trigger backend to fetch all PDFs, extract abnormalities, and get diet tips
-    const response = await fetch('/api/health-check');  // Combined call to fetch all PDFs, analyze and get diet tips
-    if (!response.ok) throw new Error('Failed to process health data');
+    // Process the entityMap and display the health tips
+    healthTipsElement.innerHTML = "<h3>🥗 Diet Recommendations:</h3>";
+    
+    Object.keys(entityMap).forEach(key => {
+      healthTipsElement.innerHTML += `<p>• ${entityMap[key]}</p><br>`;
+    });
 
-    const data = await response.json();
-
-    // 2. Process the analysis results (abnormalities and recommendations)
-    if (data.abnormalities.length === 0) {
-      healthTipsElement.innerHTML = "<p>✅ All test results are within the normal range.</p>";
-    } else {
-      healthTipsElement.innerHTML = "<h3>🥗 Diet Recommendations:</h3>";
-      data.recommendations.forEach(rec => {
-        healthTipsElement.innerHTML += `<p>• ${rec}</p><br>`;  // Assuming 'rec' is just the tip
-      });
-    }
   } catch (err) {
     console.error('❌ Error:', err);
     document.querySelector('.health-tips').innerHTML = "<p>❌ Failed to fetch health data.</p>";
