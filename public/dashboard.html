@@ -34,6 +34,11 @@
    }
    </style>
   <title>Wellness360</title>
+  <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+  <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+
 </head>
 <body>
   <div class="frame-701">
@@ -73,7 +78,15 @@
       <div class="ellipse-4402"></div>
       <img class="file-dock2" src="images/file-blue.svg" />
     </div>
-    <div class="rectangle-43653"></div>
+    <div class="rectangle-43653">
+      <h3 class="abnormal-heading">Abnormal Values</h3>
+      HAEMOGLOBIN: <span class="abnormal-value">11.8</span> (Range: 13.0-17.0)<br>
+      PCV: <span class="abnormal-value">35.0</span> (Range: 40.0-50.0)<br>
+      RBC COUNT: <span class="abnormal-value">3.8</span> (Range: 4.5-5.5)<br>
+      
+  </div>
+  
+  
     <div class="rectangle-43654"></div>
     <div class="rectangle-43655"></div>
     <div class="rectangle-43656"></div>
@@ -149,11 +162,13 @@
     <img class="calendar-light3" src="images/calender-blue.svg" />
     <img class="package-car3" src="images/emergency-black.svg" />
 
-
     <div class="upcoming-appointments2">Upcoming appointments</div>
-    <div class="health-tips">Health Tips</div>
+    <div class="health-tips"></div>
     <div class="need-help">Need help?</div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
+<script type="module" src = "health.js"></script>
+<script src="translation.js"></script>
 </body>
-<script src = "translation.js"></script>
 </html>
