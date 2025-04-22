@@ -258,115 +258,115 @@ app.delete('/reports/:id', async (req, res) => {
 
 
 // ----------------------health------------------------------------
-import { spawn } from 'child_process';
-const tmpDir = path.join(__dirname, 'tmp');
+// import { spawn } from 'child_process';
+// const tmpDir = path.join(__dirname, 'tmp');
 
-if (!fs.existsSync(tmpDir)) {
-  fs.mkdirSync(tmpDir);
-}
-app.get('/api/health-check', async (req, res) => {
-  try {
-    // Step 1: Fetch all PDF files from the database
-    const pdfFiles = await Report.find();
-    if (!pdfFiles || pdfFiles.length === 0) {
-      console.error("No PDFs found in the database.");
-      return res.status(404).send('No PDFs found');
-    }
+// if (!fs.existsSync(tmpDir)) {
+//   fs.mkdirSync(tmpDir);
+// }
+// app.get('/api/health-check', async (req, res) => {
+//   try {
+//     // Step 1: Fetch all PDF files from the database
+//     const pdfFiles = await Report.find();
+//     if (!pdfFiles || pdfFiles.length === 0) {
+//       console.error("No PDFs found in the database.");
+//       return res.status(404).send('No PDFs found');
+//     }
 
-    // Step 2: Save PDFs temporarily to process them with Python
-    const filePaths = pdfFiles.map((file, i) => {
-      const pdfPath = path.join(tmpDir, `pdf-${i}.pdf`);
-      fs.writeFileSync(pdfPath, file.data);
-      return pdfPath;
-    });
+//     // Step 2: Save PDFs temporarily to process them with Python
+//     const filePaths = pdfFiles.map((file, i) => {
+//       const pdfPath = path.join(tmpDir, `pdf-${i}.pdf`);
+//       fs.writeFileSync(pdfPath, file.data);
+//       return pdfPath;
+//     });
 
-    console.log("PDFs saved for processing:", filePaths);
+//     console.log("PDFs saved for processing:", filePaths);
 
-    // Step 3: Call Python script with the file paths
-    const python = spawn('python', ['process_pdf.py', JSON.stringify(filePaths)]);
+//     // Step 3: Call Python script with the file paths
+//     const python = spawn('python', ['process_pdf.py', JSON.stringify(filePaths)]);
 
-    let result = '';
-    let errorOutput = '';
+//     let result = '';
+//     let errorOutput = '';
 
-    python.stdout.on('data', (data) => {
-      result += data.toString();
-    });
+//     python.stdout.on('data', (data) => {
+//       result += data.toString();
+//     });
 
-    python.stderr.on('data', (data) => {
-      errorOutput += data.toString();
-      console.error(`Python error: ${data}`);
-    });
+//     python.stderr.on('data', (data) => {
+//       errorOutput += data.toString();
+//       console.error(`Python error: ${data}`);
+//     });
 
-    python.on('close', async (code) => {
-      if (code !== 0) {
-        console.error(`Python script failed with exit code: ${code}`);
-        return res.status(500).send('Error in Python script execution');
-      }
+//     python.on('close', async (code) => {
+//       if (code !== 0) {
+//         console.error(`Python script failed with exit code: ${code}`);
+//         return res.status(500).send('Error in Python script execution');
+//       }
 
-      if (errorOutput) {
-        console.error("Python script error output:", errorOutput);
-        return res.status(500).send('Error in Python script execution');
-      }
+//       if (errorOutput) {
+//         console.error("Python script error output:", errorOutput);
+//         return res.status(500).send('Error in Python script execution');
+//       }
 
-      try {
-        // 1. Read abnormalities from the file
-    const abnormalitiesData = fs.readFileSync(path.join(__dirname, 'abnormalities.txt'), 'utf-8');
-    const abnormalities = abnormalitiesData
-      .split('\n')
-      .filter(line => line.trim() !== '')
-      .join('. ');
+//       try {
+//         // 1. Read abnormalities from the file
+//     const abnormalitiesData = fs.readFileSync(path.join(__dirname, 'abnormalities.txt'), 'utf-8');
+//     const abnormalities = abnormalitiesData
+//       .split('\n')
+//       .filter(line => line.trim() !== '')
+//       .join('. ');
 
-    // 2. Prepare request body for Google NLP API
-    const requestBody = {
-      document: {
-        type: "PLAIN_TEXT",
-        content: abnormalities
-      },
-      encodingType: "UTF8"
-    };
+//     // 2. Prepare request body for Google NLP API
+//     const requestBody = {
+//       document: {
+//         type: "PLAIN_TEXT",
+//         content: abnormalities
+//       },
+//       encodingType: "UTF8"
+//     };
 
-    // 3. Send to Google NLP API
-    const apiResponse = await fetch(`https://language.googleapis.com/v1/documents:analyzeEntities?key=${process.env.GOOGLE_CLOUD_API_KEY}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(requestBody)
-    });
+//     // 3. Send to Google NLP API
+//     const apiResponse = await fetch(`https://language.googleapis.com/v1/documents:analyzeEntities?key=${process.env.GOOGLE_CLOUD_API_KEY}`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(requestBody)
+//     });
 
-    const apiData = await apiResponse.json();
+//     const apiData = await apiResponse.json();
 
-    // 4. Map entities to recommendations
-    const recommendations = [];
-    const entityMap = {
-      'HAEMOGLOBIN': "🥗 Increase iron with leafy greens, red meat, legumes.",
-      'RBC COUNT': "🥩 Boost iron and B12 with eggs, spinach, and beans.",
-      'HDL CHOLESTEROL': "🐟 Include healthy fats like avocado, nuts, and salmon.",
-      'PCV': "🥬 Eat more iron and folate-rich foods such as lentils and citrus fruits.",
-      'TRI-IODOTHYRONINE': "🧂 Add iodine-rich foods like seafood and iodized salt."
-    };
+//     // 4. Map entities to recommendations
+//     const recommendations = [];
+//     const entityMap = {
+//       'HAEMOGLOBIN': "🥗 Increase iron with leafy greens, red meat, legumes.",
+//       'RBC COUNT': "🥩 Boost iron and B12 with eggs, spinach, and beans.",
+//       'HDL CHOLESTEROL': "🐟 Include healthy fats like avocado, nuts, and salmon.",
+//       'PCV': "🥬 Eat more iron and folate-rich foods such as lentils and citrus fruits.",
+//       'TRI-IODOTHYRONINE': "🧂 Add iodine-rich foods like seafood and iodized salt."
+//     };
 
-    apiData.entities?.forEach(entity => {
-      const name = entity.name.toUpperCase();
-      if (entityMap[name]) {
-        recommendations.push(entityMap[name]);  // Only push the tip, not the whole object
-      }
-    });
+//     apiData.entities?.forEach(entity => {
+//       const name = entity.name.toUpperCase();
+//       if (entityMap[name]) {
+//         recommendations.push(entityMap[name]);  // Only push the tip, not the whole object
+//       }
+//     });
 
-    // 5. Send JSON response to the frontend (not rendering HTML, but sending JSON data)
-    return res.json({
-      abnormalities,
-      recommendations
-    });
-      } catch (error) {
-        console.error("Error processing abnormalities:", error);
-        return res.status(500).send("Error processing abnormalities");
-      }
-    });
-  } catch (error) {
-    console.error('Error during health check:', error);
-    return res.status(500).send('Error fetching or analyzing PDFs');
-  }
-});
+//     // 5. Send JSON response to the frontend (not rendering HTML, but sending JSON data)
+//     return res.json({
+//       abnormalities,
+//       recommendations
+//     });
+//       } catch (error) {
+//         console.error("Error processing abnormalities:", error);
+//         return res.status(500).send("Error processing abnormalities");
+//       }
+//     });
+//   } catch (error) {
+//     console.error('Error during health check:', error);
+//     return res.status(500).send('Error fetching or analyzing PDFs');
+//   }
+// });
 
 
